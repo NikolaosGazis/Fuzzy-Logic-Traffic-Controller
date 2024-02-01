@@ -1,8 +1,10 @@
 # Fuzzy logic based traffic light management.
 ## Overview
 
-This Python is a model of an ideal traffic light management system mimicked in four-way intersection that uses fuzzy logic. The idea is to calculate the time taken before each conference light depending on vehicles expected at different lanes. Reality is brought by allowing users to issue arrival rates for each intersection.
-Features
+This Python is a model of an ideal traffic light management system mimicked in four-way intersection that uses fuzzy logic. The idea is to calculate the time taken before each conference light depending on vehicles expected at different lanes. Reality is 
+brought by allowing users to issue arrival rates for each intersection.
+
+## Features
 
 Fuzzy Logic Controller: The scikit-fuzzy library is used to implement a fuzzy logic controller in which the value of green duration on every traffic light l, N= H(L) is determined by the queue that any driver waiting for at L.
 
@@ -11,6 +13,9 @@ User-Defined Arrival Rates: Users can provide mean arrival rate of cars at any t
 Traffic Light Pairs: A pair system is implemented to simulate the alternative switching characteristic of traffic lights at intersection. The application alternate pairs of red and green lights, enabling one pair to show up in the colorful way while another remains painted.
 
 Simulation Visualizations: The program gives visual representations of green light time distributions among multiple simulations using histograms.
+
+## Logic Applied
+The simulation follows the logic a pair of two traffic lights can be green at the same tim while the other pair is red, the pairs are based on the mirrored geographical (west-east/north-south) location.
 
 ## Usage
 
