@@ -33,4 +33,4 @@ matplotlib: For data visualization.
 
 ### License
 
-The MIT License applies to this project.
+The MIT License is used for this project.
