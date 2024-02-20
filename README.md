@@ -27,12 +27,11 @@ Note the simulation outputs particularly green light duration and also, pattern 
 
 ## Dependencies
 
-•numpy: For numerical operations.
+• numpy: For numerical operations.
 
-•scikit-fuzzy: For fuzzy logic operations.
+• scikit-fuzzy: For fuzzy logic operations.
 
-•matplotlib: For data visualization.
+• matplotlib: For data visualization.
 
-### License
-
+## License
 The MIT License is used for this project.
