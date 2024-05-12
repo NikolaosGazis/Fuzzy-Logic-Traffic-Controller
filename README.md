@@ -1,8 +1,8 @@
 # Fuzzy logic based traffic light management.
 ## Overview
 
-This Python is a model of an ideal traffic light management system mimicked in four-way intersection that uses fuzzy logic. The idea is to calculate the time taken before each conference light depending on vehicles expected at different lanes. Reality is 
-brought by allowing users to issue arrival rates for each intersection.
+This Python program is a model of an simplistic attempt to simulate traffic light management system mimicked in four-way intersection that uses fuzzy logic. 
+The idea is to calculate the time taken before each conference light depending on vehicles expected at different lanes. Reality is brought by allowing users to issue arrival rates for each intersection.
 
 ## Features
 
@@ -34,4 +34,4 @@ Note the simulation outputs particularly green light duration and also, pattern 
 • matplotlib: For data visualization.
 
 ## License
-The MIT License is used for this project.
+This project is under the MIT Licence.
