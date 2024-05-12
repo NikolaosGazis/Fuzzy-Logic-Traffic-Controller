@@ -34,4 +34,4 @@ Note the simulation outputs particularly green light duration and also, pattern 
 • matplotlib: For data visualization.
 
 ## License
-This project is under the MIT Licence.
+This project is free under the [MIT Licence](https://github.com/NikolaosGazis/Fuzzy-Logic-Traffic-Controller/tree/main?tab=MIT-1-ov-file).
