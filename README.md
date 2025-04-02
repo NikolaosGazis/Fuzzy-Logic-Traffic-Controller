@@ -1,4 +1,4 @@
-# Fuzzy Logic Based Traffic Light Management.
+# Fuzzy Logic Based Traffic Light Management
 ## Overview
 
 This Python program is a model of an simplistic attempt to simulate traffic light management system mimicked in four-way intersection that uses fuzzy logic. 
