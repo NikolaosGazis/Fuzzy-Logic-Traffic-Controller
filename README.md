@@ -19,11 +19,11 @@ The simulation follows the logic a pair of two traffic lights can be green at th
 
 ## Usage
 
-• Clone the repository.
-• Make sure to have the necessary libraries installed when using (numpy, scikit-fuzzy and matplotlib).
-• Run the **traffic_light_simulation.py** script.
-• Use prompts to supply arrival rates for each traffic light.
-• Note the simulation outputs particularly green light duration and also, pattern of distribution over several simulations.
+Clone the repository.
+Make sure to have the necessary libraries installed when using (numpy, scikit-fuzzy and matplotlib).
+Run the **traffic_light_simulation.py** script.
+Use prompts to supply arrival rates for each traffic light.
+Note the simulation outputs particularly green light duration and also, pattern of distribution over several simulations.
 
 ## Dependencies
 
