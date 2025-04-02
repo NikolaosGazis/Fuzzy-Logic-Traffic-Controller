@@ -1,17 +1,17 @@
-# Libraries #
-import time # for time delay.
-import random # for generating numbers.
-import numpy as np # numerical operations.
-import skfuzzy as fuzzy # fuzzy operations.
-from skfuzzy import control # fuzzy operations.
-import matplotlib.pyplot as plot # data visualization.
+### Libraries ###
+import time # Time delay.
+import random # Number generation.
+import numpy as np # Numerical Operations.
+import skfuzzy as fuzzy # Fuzzy Operations.
+from skfuzzy import control # Fuzzy Operations.
+import matplotlib.pyplot as plot # Data Visualization.
 
-# Variables / Inputs-Outputs #
-simulations = 10
+### Variables / Inputs-Outputs ###
+SIMULATIONS = 10
 cars_inlane = control.Antecedent(np.arange(0, 41, 1), 'cars_inlane') # range of cars that can be waiting in a traffic light/lane (0-40).
 green_light_time = control.Consequent(np.arange(15, 31, 1), 'green_light') # range of seconds green light can be lit (15-30sec).
 
-# Linguistic Variables - Labels #                 # tringular values #
+# Linguistic Variables - Labels #
 # Assigning labels to determine low-medium-high queue of cars waiting.
 cars_inlane['low'] = fuzzy.trimf(cars_inlane.universe, [0, 0, 50])
 cars_inlane['medium'] = fuzzy.trimf(cars_inlane.universe, [0, 50, 100])
@@ -27,21 +27,21 @@ rule1 = control.Rule(cars_inlane['low'], green_light_time['short'])
 rule2 = control.Rule(cars_inlane['medium'], green_light_time['medium'])
 rule3 = control.Rule(cars_inlane['high'], green_light_time['long'])
 
-# Parameters #
-delay = 2 # seconds between simulations.
+### Parameters ###
+DELAY = 2 # Seconds between simulations.
 
 # Initialize the Control System #
 data = {'west': 0, 'south': 0, 'east': 0, 'north': 0} # Each traffic light is named based on its geographical position - starting with 0 cars in each lane.
 traffic_control = control.ControlSystem([rule1, rule2, rule3]) # Passing the rules.
 traffic = control.ControlSystemSimulation(traffic_control) # Creating the Control System.
 
-### Functions - Classes ###
+### Functions/Classes ###
 # Pair of Lights Class - the pairs are based on the mirroring positions of the lanes, so: west<->east and north<->south #
 class TrafficLightPairs:
     PAIR1 = ('west', 'east')
     PAIR2 = ('north', 'south')
 
-# Switch the status for the traffic light pairs if:green->red / if:red->green #
+# Switch the status for the traffic light pairs if:green->red or if:red->green #
 def switch_traffic_light_pairs(c_pair):
     if c_pair == TrafficLightPairs.PAIR1:
         return TrafficLightPairs.PAIR2
@@ -65,7 +65,7 @@ def get_user_input():
                 print("[SYSTEM] Invalid input. Please enter a float number")
     return inputs
 
-# Visualize the most frequent times for the green light - histograma #
+# Visualize the most frequent times for the green light - Histograma #
 def green_light_times_fun(gl_times): # green_light_times
     plot.hist(gl_times, bins=10, edgecolor='black')
     plot.title('Distribution of data')
@@ -73,7 +73,7 @@ def green_light_times_fun(gl_times): # green_light_times
     plot.ylabel('Frequency')
     plot.show()
 
-# Main/Core #
+### Core ###
 def main():
     print("----- Starting simulation of Traffic Control using Fuzzy Logic -----\n")
     
@@ -81,11 +81,11 @@ def main():
     car_arrivals = get_user_input() # Get user input for the rate of arrivals.
     green_light_times = [] # Empty list to store each simulation's green light time.
     
-    # Pass the first pair to start the simulations #
+    # Pass the first pair to start the SIMULATIONS #
     current_traffic_light_pair = TrafficLightPairs.PAIR1 # west-east.
     
-    # Simulations #
-    for simulation in range(simulations):
+    # SIMULATIONS #
+    for simulation in range(SIMULATIONS):
         print(f"\n(Simulation: {simulation+1})")
         
         # Update user and system which pair of lights is green and red #
@@ -121,7 +121,7 @@ def main():
         green_light_times.append(max_green_of_pair)
             
         # Time delay for data observation #
-        time.sleep(delay)
+        time.sleep(DELAY)
         
         # Switch traffic light pair - status #
         current_traffic_light_pair = switch_traffic_light_pairs(current_traffic_light_pair)
@@ -131,6 +131,6 @@ def main():
     # Visualize data about the total green times #
     green_light_times_fun(green_light_times)
     
-# Execute the program # 
+### Execute the Program ###
 if __name__ == "__main__":
     main()
